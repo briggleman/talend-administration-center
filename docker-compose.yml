@@ -1,0 +1,40 @@
+db:
+  image: mysql:5.7.11
+  ports:
+    - "3306:3306"
+  volumes:
+    - ~/data/mysql:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: "SOMEPASSWORD"
+    MYSQL_DATABASE: talend_administrator
+    MYSQL_USER: tisadmin
+    MYSQL_PASSWORD: tisadmin
+  restart: always
+tac:
+  image: [TAC IMAGE NAME]
+  ports:
+    - "7890:7890"
+    - "8050:8050"
+    - "80:8080"
+    - "9419:9419"
+  volumes:
+    - ~/logs:/usr/local/logs
+  restart: always
+  links:
+    - db
+elasticsearch:
+  image: elasticsearch:2.2.0
+  command: elasticsearch
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  volumes:
+    - ~/data/elasticsearch:/usr/share/elasticsearch/data
+  restart: always
+kibana:
+  image: kibana:4.4.1
+  ports:
+    - "8080:5601"
+  restart: always
+  links:
+    - elasticsearch:elasticsearch

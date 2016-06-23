@@ -1,0 +1,2 @@
+export JAVA_OPTS="$JAVA_OPTS -Xmx2048m -XX:MaxPermSize=1024m"
+CATALINA_OPTS="-Dbtm.root=$CATALINA_HOME -Dbitronix.tm.configuration=$CATALINA_HOME/conf/btm-config.properties -Djbpm.tsr.jndi.lookup=java:comp/env/TransactionSynchronizationRegistry -Djava.security.auth.login.config=$CATALINA_HOME/webapps/kie-drools-wb/WEB-INF/classes/login.config -Dorg.uberfire.nio.git.daemon.port=9419 -Dorg.uberfire.nio.git.ssh.enabled=false"
