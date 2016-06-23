@@ -84,19 +84,19 @@ The following is a list of containers and their exposed ports:
 ### [Environment Variables](#tac-vars)
 The following is a list of environment variables used with the TAC container.
 
-##`MYSQL_HOST`
+####`MYSQL_HOST`
 The IP of the MySQL server.  Default is `127.0.0.1`, this should be overridden at runtime if MySQL is not linked to TAC.
 
-##`MYSQL_PORT`
+####`MYSQL_PORT`
 The port to connect to on MySQL server.  Default is `3306`
 
-##`MYSQL_DB`
+####`MYSQL_DB`
 The database to be used by TAC.  Default is `talend_administrator`
 
-##`MYSQL_USER`
+####`MYSQL_USER`
 The user to connect to the db denoted by the `MYSQL_DB` variable.  Default is `tisadmin`.
 
-##`MYSQL_PASSWORD`
+####`MYSQL_PASSWORD`
 The password to connect to the db denoted by the `MYSQL_DB` variable.  Default is `tisadmin`.
 
 ### [Volumes](#tac-volumes)
